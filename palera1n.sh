@@ -248,7 +248,7 @@ get_device_mode() {
         exit 1;
     fi
     if [ "$os" = "Linux" ]; then
-        usbserials=$(cat /sys/bus/usb/devices/*/serial)
+        usbserials='1-5'
     elif [ "$os" = "Darwin" ]; then
         usbserials=$(printf '%s' "$sp" | grep 'Serial Number' | cut -d: -f2- | sed 's/ //')
     fi
